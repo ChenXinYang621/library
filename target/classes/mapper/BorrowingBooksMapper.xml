@@ -68,7 +68,8 @@
         </where>
     </sql>
     <sql id="Base_Column_List">
-        id, user_id, book_id, date
+        id
+        , user_id, book_id, date
     </sql>
     <select id="selectByExample" parameterType="com.zbw.domain.BorrowingBooksExample" resultMap="BaseResultMap">
         select
@@ -216,8 +217,7 @@
 
     <select id="selectAllByPage" resultMap="BaseResultMap">
         select *
-        from borrowingbooks
-        limit #{currIndex},#{pageSize}
+        from borrowingbooks limit #{currIndex},#{pageSize}
     </select>
 
     <select id="selectAll" resultType="Integer">

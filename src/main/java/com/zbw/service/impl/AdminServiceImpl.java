@@ -31,10 +31,7 @@ public class AdminServiceImpl implements IAdminService {
         List<Admin> admin = adminMapper.selectByExample(adminExample);
         if (null == admin)
             return false;
-        if (admin.size() < 1) {
-            return false;
-        }
-        return true;
+        return admin.size() >= 1;
     }
 
     @Override
@@ -60,10 +57,7 @@ public class AdminServiceImpl implements IAdminService {
     @Override
     public boolean addBook(Book book) {
         int n = bookMapper.insert(book);
-        if (n > 0) {
-            return true;
-        }
-        return false;
+        return n > 0;
     }
 
     @Override
@@ -75,10 +69,7 @@ public class AdminServiceImpl implements IAdminService {
     @Override
     public boolean addBookCategory(BookCategory bookCategory) {
         int n = bookCategoryMapper.insert(bookCategory);
-        if (n > 0) {
-            return true;
-        }
-        return false;
+        return n > 0;
     }
 
     @Override

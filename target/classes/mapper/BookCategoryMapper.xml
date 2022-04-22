@@ -66,7 +66,8 @@
         </where>
     </sql>
     <sql id="Base_Column_List">
-        category_id, category_name
+        category_id
+        , category_name
     </sql>
     <select id="selectByExample" parameterType="com.zbw.domain.BookCategoryExample" resultMap="BaseResultMap">
         select
@@ -169,8 +170,7 @@
     <!-- 分页查询-->
     <select id="selectByPageNum" resultMap="BaseResultMap">
         select *
-        from book_category
-        limit #{currIndex},#{pageSize}
+        from book_category limit #{currIndex},#{pageSize}
     </select>
     <select id="selectAllCount" resultType="Integer">
         select count(*)

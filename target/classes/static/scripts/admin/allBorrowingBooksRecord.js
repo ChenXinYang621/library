@@ -1,8 +1,8 @@
-layui.use(['form', 'element','layer'], function () {
+layui.use(['form', 'element', 'layer'], function () {
     let form = layui.form;
     let element = layui.element;
     let layer = layui.layer;
-    
+
 });
 
 

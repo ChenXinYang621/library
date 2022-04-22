@@ -1,4 +1,4 @@
-layui.use(['form','element','layer'], function () {
+layui.use(['form', 'element', 'layer'], function () {
     let form = layui.form;
     let element = layui.element();
     let layer = layui.layer;
@@ -37,7 +37,7 @@ $(document).ready(function () {
         // 获取要删除选项对应的 id;
 
         let that = $(this);
-        
+
         layer.confirm('确认删除?', {
             btn: ['确认', '取消'] //按钮
         }, function () {

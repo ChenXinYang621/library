@@ -71,7 +71,8 @@
         </where>
     </sql>
     <sql id="Base_Column_List">
-        book_id, book_name, book_author, book_publish, book_category, book_price, book_introduction
+        book_id
+        , book_name, book_author, book_publish, book_category, book_price, book_introduction
     </sql>
 
     <select id="selectByExample" parameterType="com.zbw.domain.BookExample" resultMap="BaseResultMap">
@@ -263,8 +264,8 @@
     <select id="selectByCategoryId" resultMap="BaseResultMap">
         select *
         from book
-        where book_category = #{categoryId}
-        limit #{currIndex},#{pageSize}
+        where book_category = #{categoryId} limit #{currIndex}
+            , #{pageSize}
     </select>
 
     <select id="selectBookCountByCategoryId" resultType="Integer">

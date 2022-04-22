@@ -1,91 +1,47 @@
-# springboot-libraryManageSystem
 
-> 图书管理系统 ，使用当前最为流行的 SpringBoot 框架，可作为springboot的入门项目练习使用，也可稍加改进做一个毕业设计项目。
 
-## 一、相关技术栈
+## 1. 相关技术栈
 
 1. **前端：** Thymeleaf、Layui、Ajax、JQuery
-2. **后端** ： springboot , mybatis
-3. **开发环境：** IDEA 、SpringBoot 2.3、Maven
-4. **数据库**：MySQL 5.7
+2. **后端** ： SpringBoot , MyBatis
+3. **开发环境：** IDEA 、SpringBoot 2.6.6、Maven
+4. **数据库**：MySQL 8.0.28
+4. **服务器**：腾讯云 ubuntu20
 
-### 默认用户
+用于测试的默认用户
 
-当您运行初始脚本后，默认存在以下用户，便于测试：
-
-| 登录名 | 密码   | 用户角色 |
+| username | password | role |
 | :---- | :----- | :------ |
 | user1  | 123456 | 普通用户 |
 | user2  | 123456 | 普通用户 |
 | admin  | 123456 |  管理员  |
 
-## 二、主要功能
+## 2. 需求
 
-![架构图](assets/架构图.jpg)
+![图书管理系统的需求](https://hexoblogimages-1304994718.cos.ap-nanjing.myqcloud.com/202204221018639.png)
 
-## 三、数据库表结构设计
+## 3. 数据库设计
 
-![db_table](assets/db_table.jpg)
+![数据库设计](https://hexoblogimages-1304994718.cos.ap-nanjing.myqcloud.com/202204221022163.png)
 
-## 四 、界面设计
+## 4. 技术实现
 
-### ①、登录界面
+未来技术实现：
 
-![login](assets/login.jpg)
+1. 鉴权：使用 JWT 配合 SpringSecurity
+2. 对象存储：MinIO OSS 存储桶，存放对应的电子书供借阅使用
+3. 部署：Docker CICD 一套部署
+4. 缓存/消息队列：防止高并发问题
+5. 即时通讯：方便发布公告，或者进行通知
 
-### ②、管理员界面
+## 5. 扩展功能
 
-管理员首页
+### 5.1 UI 参考
 
-![admin_index](assets/admin_index.jpg)
+![image-20220422104402765](https://hexoblogimages-1304994718.cos.ap-nanjing.myqcloud.com/202204221044830.png)
 
-添加书籍
+### 5.2 结构图片
 
-![add_book](assets/add_book.jpg)
+以管理员的 controller 举例：
 
-新建书籍类别
-
-![book_category](assets/book_category.jpg)
-
-查询书籍
-
-![searchBook](assets/searchBook.jpg)
-
-用户管理
-
-![user_manager](assets/user_manager.jpg)
-
-![addUser](assets/addUser.jpg)
-
-借阅信息
-
-![allRecord](assets/allRecord.jpg)
-
-管理员信息修改
-
-![adminInfo](assets/adminInfo.jpg)
-
-### ③、用户运行界面
-
-用户登录首页
-
-![user_index](assets/user_index.jpg)
-
-用户借书记录
-
-![借书记录](assets/借书记录.jpg)
-
-![借阅书籍](assets/借阅书籍.jpg)
-
-## 五、项目部署启动
-
-### ①、部署环境准备
-
-- jdk1.8
-- mysql 5.7+
-- maven
-
-### ②、具体部署
-
-#### 数据库配置【必须】
-
+![admin controller](https://hexoblogimages-1304994718.cos.ap-nanjing.myqcloud.com/202204221348259.png)

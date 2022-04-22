@@ -68,7 +68,8 @@
         </where>
     </sql>
     <sql id="Base_Column_List">
-        user_id, user_name, user_pwd, user_email
+        user_id
+        , user_name, user_pwd, user_email
     </sql>
     <select id="selectByExample" parameterType="com.zbw.domain.UserExample" resultMap="BaseResultMap">
         select
@@ -104,7 +105,7 @@
     </delete>
     <insert id="insert" parameterType="com.zbw.domain.User">
         insert into user (user_id, user_name, user_pwd,
-                            user_email)
+                          user_email)
         values (#{userId,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{userPwd,jdbcType=VARCHAR},
                 #{userEmail,jdbcType=VARCHAR})
     </insert>
@@ -190,7 +191,7 @@
         </set>
         where user_id = #{userId,jdbcType=INTEGER}
     </update>
-    
+
     <update id="updateByPrimaryKey" parameterType="com.zbw.domain.User">
         update user
         set user_name  = #{userName,jdbcType=VARCHAR},
@@ -202,8 +203,7 @@
     <!-- 分页查询用户-->
     <select id="selectByPageNum" resultMap="BaseResultMap">
         select *
-        from user
-        limit #{currIndex},#{pageSize}
+        from user limit #{currIndex},#{pageSize}
     </select>
 
     <select id="selectUserCount" resultType="Integer">

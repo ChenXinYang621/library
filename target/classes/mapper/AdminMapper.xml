@@ -68,9 +68,10 @@
         </where>
     </sql>
     <sql id="Base_Column_List">
-        admin_id, admin_name, admin_pwd, admin_email
+        admin_id
+        , admin_name, admin_pwd, admin_email
     </sql>
-    
+
     <select id="selectByExample" parameterType="com.zbw.domain.AdminExample" resultMap="BaseResultMap">
         select
         <if test="distinct">
@@ -86,7 +87,7 @@
             order by ${orderByClause}
         </if>
     </select>
-    
+
     <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
@@ -106,7 +107,7 @@
     </delete>
     <insert id="insert" parameterType="com.zbw.domain.Admin">
         insert into admin (admin_id, admin_name, admin_pwd,
-                             admin_email)
+                           admin_email)
         values (#{adminId,jdbcType=INTEGER}, #{adminName,jdbcType=VARCHAR}, #{adminPwd,jdbcType=VARCHAR},
                 #{adminEmail,jdbcType=VARCHAR})
     </insert>
@@ -177,7 +178,7 @@
             <include refid="Update_By_Example_Where_Clause"/>
         </if>
     </update>
-    
+
     <update id="updateByPrimaryKeySelective" parameterType="com.zbw.domain.Admin">
         update admin
         <set>
@@ -193,7 +194,7 @@
         </set>
         where admin_id = #{adminId,jdbcType=INTEGER}
     </update>
-    
+
     <update id="updateByPrimaryKey" parameterType="com.zbw.domain.Admin">
         update admin
         set admin_name  = #{adminName,jdbcType=VARCHAR},
@@ -201,5 +202,5 @@
             admin_email = #{adminEmail,jdbcType=VARCHAR}
         where admin_id = #{adminId,jdbcType=INTEGER}
     </update>
-    
+
 </mapper>
